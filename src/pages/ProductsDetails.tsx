@@ -1,8 +1,7 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState, FormEvent } from 'react';
+import React, { useEffect, useState, FormEvent } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Puff } from 'react-loader-spinner';
-import { CountCart } from '../App';
 
 interface Product {
     id?: string;
@@ -23,7 +22,6 @@ const ProductsDetails: React.FC = () => {
     const navigate = useNavigate();
     const [productColor, setProductColor] = useState<string>('');
     const [amount, setAmount] = useState<number>(1);
-    const { count, setCount } = useContext(CountCart);
 
     useEffect(() => {
         setLoading(true);
